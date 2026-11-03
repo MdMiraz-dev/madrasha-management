@@ -45,7 +45,6 @@ export function toBengaliNumerals(num: number | string): string {
  */
 export function getHijriDate(date: Date, lang: string = 'bn'): string {
   try {
-    // Attempt standard Intl Islamic Umalqura calendar formatting
     const intlFormatter = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', {
       day: 'numeric',
       month: 'numeric',
@@ -61,7 +60,7 @@ export function getHijriDate(date: Date, lang: string = 'bn'): string {
 
     if (lang === 'bn') {
       const bnDay = toBengaliNumerals(dayNum);
-      const bnMonth = HIJRI_MONTHS_BN[monthIndex] || 'রবিউল আউয়াল';
+      const bnMonth = HIJRI_MONTHS_BN[monthIndex] || 'জমাদিউল আউয়াল';
       const bnYear = toBengaliNumerals(yearPart);
       return `${bnDay} ${bnMonth} ${bnYear} হিজরি`;
     } else if (lang === 'ar') {
@@ -71,16 +70,20 @@ export function getHijriDate(date: Date, lang: string = 'bn'): string {
         year: 'numeric',
       }).format(date);
     } else {
-      const enMonth = HIJRI_MONTHS_EN[monthIndex] || 'Rabi al-Awwal';
+      const enMonth = HIJRI_MONTHS_EN[monthIndex] || 'Jumada al-Awwal';
       return `${dayNum} ${enMonth} ${yearPart} AH`;
     }
   } catch {
-    // Robust fallback
-    return lang === 'bn' ? '১০ রবিউল আউয়াল ১৪৪৮ হিজরি' : '10 Rabi al-Awwal 1448 AH';
+    return lang === 'bn' ? '২৩ জমাদিউল আউয়াল ১৪৪৮ হিজরি' : '23 Jumada al-Awwal 1448 AH';
   }
 }
 
-export default function HijriLiveClock({ className = '' }: { className?: string }) {
+interface HijriLiveClockProps {
+  className?: string;
+  variant?: 'default' | 'banner';
+}
+
+export default function HijriLiveClock({ className = '', variant = 'default' }: HijriLiveClockProps) {
   const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
   const [currentTime, setCurrentTime] = useState<Date | null>(null);
@@ -96,9 +99,9 @@ export default function HijriLiveClock({ className = '' }: { className?: string 
 
   if (!mounted || !currentTime) {
     return (
-      <div className={`flex items-center gap-2 text-xs text-gray-400 dark:text-gray-500 ${className}`}>
-        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-        <span>হিজরি ক্যালেন্ডার লোড হচ্ছে...</span>
+      <div className={`flex items-center gap-2 text-xs font-bold text-white ${className}`}>
+        <div className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+        <span>সময় লোড হচ্ছে...</span>
       </div>
     );
   }
@@ -128,34 +131,69 @@ export default function HijriLiveClock({ className = '' }: { className?: string 
   // Hijri Date
   const hijriString = getHijriDate(currentTime, language);
 
+  if (variant === 'banner') {
+    return (
+      <div
+        className={`inline-flex items-center gap-3 px-3.5 py-2 rounded-xl bg-slate-950/70 border border-white/30 shadow-lg backdrop-blur-md text-xs sm:text-sm text-white ${className}`}
+        title="বর্তমান সময়, ইংরেজি ও ইসলামিক হিজরি তারিখ"
+      >
+        {/* Live Time with Pulsing Bright Neon Dot */}
+        <div className="flex items-center gap-2 font-mono font-black text-white tracking-wide">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-90"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+          </span>
+          <Clock size={15} className="text-amber-300" />
+          <span>{timeString}</span>
+        </div>
+
+        <div className="h-4 w-[1px] bg-white/40 hidden sm:block" />
+
+        {/* Gregorian Date */}
+        <span className="text-white font-bold text-xs sm:text-sm hidden md:inline">
+          {gregorianDate}
+        </span>
+
+        <div className="h-4 w-[1px] bg-white/40" />
+
+        {/* Islamic Hijri Date with Moon Icon - High Contrast Gold Badge */}
+        <div className="flex items-center gap-1.5 font-black text-slate-950 bg-amber-400 px-3 py-1 rounded-lg border border-amber-300 shadow-sm text-xs sm:text-sm whitespace-nowrap">
+          <Moon size={14} className="text-slate-950 fill-slate-950" />
+          <span>{hijriString}</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Default navbar appearance (Crisp, High Contrast)
   return (
     <div
-      className={`inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-emerald-50/90 dark:bg-slate-800/90 border border-emerald-200/80 dark:border-emerald-800/60 shadow-xs backdrop-blur-sm transition-all text-xs ${className}`}
+      className={`inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-xs text-xs ${className}`}
       title="বর্তমান সময়, ইংরেজি ও ইসলামিক হিজরি তারিখ"
     >
-      {/* Live Time with Pulsing Dot */}
-      <div className="flex items-center gap-1.5 font-mono font-bold text-emerald-950 dark:text-emerald-300">
+      {/* Live Time */}
+      <div className="flex items-center gap-1.5 font-mono font-bold text-slate-900 dark:text-emerald-300">
         <span className="relative flex h-2 w-2">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
         </span>
-        <Clock size={13} className="text-emerald-700 dark:text-emerald-400" />
+        <Clock size={14} className="text-emerald-700 dark:text-emerald-400" />
         <span>{timeString}</span>
       </div>
 
-      <div className="h-3.5 w-[1px] bg-emerald-300 dark:bg-emerald-700/60 hidden sm:block" />
+      <div className="h-3.5 w-[1px] bg-slate-300 dark:bg-slate-600 hidden sm:block" />
 
       {/* Gregorian Date */}
-      <span className="text-gray-600 dark:text-gray-300 font-medium hidden md:inline">
+      <span className="text-slate-700 dark:text-slate-200 font-semibold hidden md:inline">
         {gregorianDate}
       </span>
 
-      <div className="h-3.5 w-[1px] bg-emerald-300 dark:bg-emerald-700/60" />
+      <div className="h-3.5 w-[1px] bg-slate-300 dark:bg-slate-600" />
 
-      {/* Islamic Hijri Date with Moon Icon */}
-      <div className="flex items-center gap-1.5 font-bold text-[#065f46] dark:text-amber-300 bg-emerald-100/70 dark:bg-emerald-950/70 px-2 py-0.5 rounded-lg border border-emerald-300/60 dark:border-emerald-700/50">
-        <Moon size={12} className="text-amber-600 dark:text-amber-300 fill-amber-500/20" />
-        <span className="whitespace-nowrap">{hijriString}</span>
+      {/* Islamic Hijri Date */}
+      <div className="flex items-center gap-1.5 font-bold text-white bg-emerald-700 dark:bg-emerald-600 px-2.5 py-0.5 rounded-lg shadow-xs whitespace-nowrap">
+        <Moon size={13} className="text-amber-300 fill-amber-300" />
+        <span>{hijriString}</span>
       </div>
     </div>
   );

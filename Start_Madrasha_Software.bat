@@ -1,5 +1,5 @@
 @echo off
-title Madrasha Management System - Server Launcher
+title Madrasha Management System - Super-Fast Server Launcher
 color 0A
 chcp 65001 >nul
 cls
@@ -19,6 +19,15 @@ if not exist "node_modules\" (
         echo [ভুল] প্যাকেজ ইনস্টল করতে সমস্যা হয়েছে। ইন্টারনেট কানেকশন চেক করুন।
         pause
         exit /b
+    )
+)
+
+:: Check if .next build exists, build if missing for lightning-fast navigation
+if not exist ".next\" (
+    echo [বিজ্ঞপ্তি] সিস্টেমের দ্রুততম পারফরম্যান্সের জন্য বিল্ড তৈরি করা হচ্ছে...
+    call npm run build
+    if %errorlevel% neq 0 (
+        echo [সতর্কবার্তা] বিল্ড ব্যর্থ হলে সাধারণ মোডে চালানো হবে...
     )
 )
 
@@ -42,11 +51,11 @@ if %errorlevel% equ 0 (
     goto show_urls
 )
 
-echo [1/2] কম্পিউটার ও মোবাইলের জন্য সার্ভার শুরু করা হচ্ছে...
-start "Taleem ERP Dev Server" cmd /k npm run dev
+echo [1/2] সুপার-ফাস্ট অপটিমাইজড সার্ভার শুরু করা হচ্ছে...
+start "Taleem ERP Server" cmd /k npm run start
 
 echo [2/2] সার্ভার পুরোপুরি প্রস্তুত হতে কয়েক সেকেন্ড অপেক্ষা করুন...
-timeout /t 5 /nobreak >nul
+timeout /t 3 /nobreak >nul
 
 :show_urls
 echo.
