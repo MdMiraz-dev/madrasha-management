@@ -253,8 +253,8 @@ export default function AdmissionPage() {
 
 
   if (showReceipt) {
-    const orgName = instituteSettings.name || (language === 'ar' ? 'الجامعة الإسلامية النموذجية' : language === 'en' ? 'Al-Jamia Al-Islamia' : 'আল-জামিয়া আল-ইসলামিয়া');
-    const orgAddr = instituteSettings.address || (language === 'ar' ? 'دكا، بنغلاديش' : language === 'en' ? 'Dhaka, Bangladesh' : 'ঢাকা, বাংলাদেশ');
+    const orgName = instituteSettings.name || (language === 'ar' ? 'الجامعة العربية إمداد العلوم فريد آباد، دكا' : language === 'en' ? 'Jamia Arabia Imdadul Uloom Faridabad Madrasah, Dhaka' : 'জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা, ঢাকা');
+    const orgAddr = instituteSettings.address || (language === 'ar' ? 'فريد آباد، غنداريا، دكا-١٢٠٤' : language === 'en' ? 'Faridabad, Gandaria, Dhaka-1204' : 'ফরিদাবাদ, গেন্ডারিয়া, ঢাকা-১২০৪');
 
     return (
       <div className="p-8 bg-gray-50 dark:bg-slate-900 min-h-screen font-sans text-gray-900 dark:text-white">

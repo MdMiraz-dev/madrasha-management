@@ -432,10 +432,10 @@ export default function TalimatPage() {
             {/* MARKSHEET HEADER */}
             <div className="text-center border-b pb-6 border-gray-200 dark:border-slate-700 relative z-10">
               <h2 className="text-2xl md:text-3xl font-black text-emerald-800 dark:text-emerald-400 font-serif">
-                {instituteSettings.name || "আল-জামিয়া আল-ইসলামিয়া"}
+                {instituteSettings.name || "জামিয়া আরাবিয়া ইমদাদুল উলুম ফরিদাবাদ মাদ্রাসা, ঢাকা"}
               </h2>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {instituteSettings.address || "ঢাকা, বাংলাদেশ"} — তালীমাত ও পরীক্ষা নিয়ন্ত্রণ বিভাগ
+                {instituteSettings.address || "ফরিদাবাদ, গেন্ডারিয়া, ঢাকা-১২০৪"} — তালীমাত ও পরীক্ষা নিয়ন্ত্রণ বিভাগ
               </p>
               
               <div className="inline-block mt-3 px-6 py-1.5 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-300 font-bold text-sm rounded-full">

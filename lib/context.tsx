@@ -47,10 +47,10 @@ interface AppContextType {
 }
 
 const defaultSettings: InstituteSettings = {
-  name: 'আস-সুন্নাহ স্কিল ডেভেলপমেন্ট ইনস্টিটিউট',
-  logo: '/images/as_sunnah_logo.png',
-  address: 'ঢাকা, বাংলাদেশ',
-  principalName: 'মুহাম্মদ মিরাজ',
+  name: 'জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা, ঢাকা',
+  logo: '/images/faridabad_madrasa_logo.svg',
+  address: 'ফরিদাবাদ, গেন্ডারিয়া, ঢাকা-১২০৪',
+  principalName: 'মাওলানা মুফতি আব্দুল কুদ্দুস',
   principalSignature: '',
 };
 
@@ -80,13 +80,19 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       if (savedSettings) {
         try {
           const parsed = JSON.parse(savedSettings);
-          setInstituteSettingsState({
-            ...defaultSettings,
-            ...parsed,
-            name: parsed.name || defaultSettings.name,
-            logo: parsed.logo || defaultSettings.logo,
-            address: parsed.address || defaultSettings.address,
-          });
+          const isOldName = !parsed.name || parsed.name.includes('আস-সুন্নাহ') || parsed.name.includes('Al-Jamia');
+          if (isOldName) {
+            setInstituteSettingsState(defaultSettings);
+            localStorage.setItem('instituteSettings', JSON.stringify(defaultSettings));
+          } else {
+            setInstituteSettingsState({
+              ...defaultSettings,
+              ...parsed,
+              name: parsed.name || defaultSettings.name,
+              logo: parsed.logo || defaultSettings.logo,
+              address: parsed.address || defaultSettings.address,
+            });
+          }
         } catch {
           setInstituteSettingsState(defaultSettings);
         }

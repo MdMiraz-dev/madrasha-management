@@ -99,17 +99,20 @@ export default function DashboardPage() {
     <div className="space-y-5 max-w-7xl mx-auto">
 
       {/* Welcome Banner */}
-      <div className="bg-gradient-to-r from-emerald-700 via-emerald-800 to-slate-900 text-white rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-sm border border-emerald-600/30">
+      <div className="bg-gradient-to-r from-emerald-800 via-emerald-900 to-slate-900 text-white rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-sm border border-emerald-700/40">
         <div>
-          <span className="text-[11px] font-bold text-amber-300 bg-white/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-            তা'লীম ইআরপি স্মার্ট ড্যাশবোর্ড
+          <span className="text-[11.5px] font-bold text-amber-300 bg-emerald-950/60 border border-amber-400/30 px-3 py-1 rounded-full uppercase tracking-wider inline-flex items-center gap-1.5">
+            <span>🏛️</span> কেন্দ্রীয় তালীমী ও প্রশাসনিক ব্যবস্থাপনা প্যানেল
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold leading-tight mt-1">{t.welcomeGreeting}</h2>
-          <p className="text-emerald-100 text-xs sm:text-sm mt-0.5 leading-tight">{instituteName}</p>
+          <h2 className="text-xl sm:text-2xl font-black leading-tight mt-2 tracking-tight">{t.welcomeGreeting}</h2>
+          <p className="text-emerald-100 text-xs sm:text-sm mt-1 leading-tight font-medium flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            {instituteName}
+          </p>
         </div>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
           {/* Hijri & Live Clock Dignified Date Badge */}
-          <HijriLiveClock className="bg-white/15 dark:bg-black/30 border-white/20 text-white" />
+          <HijriLiveClock className="bg-white/10 dark:bg-black/40 border-emerald-500/30 text-white shadow-inner" />
         </div>
       </div>
 

@@ -19,8 +19,8 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Slice Video Presentation Modal State - Auto opens on visit
-  const [isSliceModalOpen, setIsSliceModalOpen] = useState(true);
+  // Slice Video Presentation Modal State - Closed by default for clean login experience
+  const [isSliceModalOpen, setIsSliceModalOpen] = useState(false);
 
   const langLabels = { bn: 'বাংলা', en: 'EN', ar: 'AR' };
 

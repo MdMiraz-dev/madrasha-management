@@ -137,25 +137,28 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           ${sidebarOpen ? 'translate-x-0' : (isRtl ? 'translate-x-full' : '-translate-x-full')}
         `}>
           {/* Sidebar Header */}
-          <div className="flex items-center justify-between px-4 py-4 border-b border-slate-700 min-h-[64px]">
-            <div className="flex items-center gap-2.5 min-w-0">
+          <div className="flex items-center justify-between px-4 py-3.5 border-b border-slate-700/80 bg-slate-950/40 min-h-[68px]">
+            <div className="flex items-center gap-3 min-w-0">
               {instituteSettings.logo ? (
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img
                   src={instituteSettings.logo}
                   alt="Logo"
-                  className="w-8 h-8 flex-shrink-0 object-contain bg-white rounded-full p-0.5"
+                  className="w-10 h-10 flex-shrink-0 object-contain bg-emerald-950/60 rounded-full p-0.5 border border-amber-400/50 shadow-sm"
                 />
               ) : (
-                <div className="w-8 h-8 flex-shrink-0 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <Book size={16} />
+                <div className="w-10 h-10 flex-shrink-0 bg-emerald-700 border border-amber-400/40 rounded-full flex items-center justify-center shadow-sm">
+                  <Book size={18} className="text-amber-200" />
                 </div>
               )}
               <div className="min-w-0">
-                <p className="text-sm font-bold leading-tight truncate text-white" title={instituteName}>
+                <p className="text-sm font-black leading-tight truncate text-white" title={instituteName}>
                   {instituteName}
                 </p>
-                <p className="text-xs text-emerald-400 leading-tight">{t.taleemErp}</p>
+                <p className="text-[11px] font-semibold text-emerald-400 leading-tight mt-0.5 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  {t.taleemErp}
+                </p>
               </div>
             </div>
             <button

@@ -745,10 +745,10 @@ export default function DonorsZakatPage() {
 
               <div className="text-center border-b pb-4 border-gray-200 dark:border-slate-700 relative z-10">
                 <h2 className="text-2xl font-black text-emerald-800 dark:text-emerald-400 font-serif">
-                  {instituteSettings.name || "আল-জামিয়া আল-ইসলামিয়া"}
+                  {instituteSettings.name || "জামিয়া আরাবিয়া ইমদাদুল উলুম ফরিদাবাদ মাদ্রাসা, ঢাকা"}
                 </h2>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  {instituteSettings.address || "ঢাকা, বাংলাদেশ"} — এতিমখানা ও লিল্লাহ ফান্ড
+                  {instituteSettings.address || "ফরিদাবাদ, গেন্ডারিয়া, ঢাকা-১২০৪"} — এতিমখানা ও লিল্লাহ ফান্ড
                 </p>
                 
                 <div className="inline-block mt-2 px-5 py-1 bg-emerald-50 border border-emerald-300 text-emerald-800 font-bold text-xs rounded-full">

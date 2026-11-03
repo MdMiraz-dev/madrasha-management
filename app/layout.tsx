@@ -12,17 +12,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "তা'লীম ইআরপি - আস-সুন্নাহ স্কিল ডেভেলপমেন্ট ইনস্টিটিউট",
-  description: 'Complete Taleem ERP system for Madrasa & Skill Development Management',
+  title: "তা'লীম ইআরপি - জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা, ঢাকা",
+  description: 'জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা - তালীমাত, হিফজ ট্র্যাকার, দারুল ইক্বামা ও বায়তুল মাল ব্যবস্থাপনা সিস্টেম',
   manifest: '/manifest.json',
   icons: {
-    icon: '/images/as_sunnah_logo.png',
-    apple: '/images/as_sunnah_logo.png',
+    icon: '/images/faridabad_madrasa_logo.svg',
+    apple: '/images/faridabad_madrasa_logo.svg',
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: "তা'লীম ইআরপি",
+    title: "তা'লীম ইআরপি - জামিয়া ফরিদাবাদ",
   },
 };
 

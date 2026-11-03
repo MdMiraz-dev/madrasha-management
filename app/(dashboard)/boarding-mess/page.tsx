@@ -2613,7 +2613,7 @@ export default function BoardingMessPage() {
                   মাসিক বোর্ডিং ও মেস খতিয়ান
                 </span>
                 <h2 className="text-xl font-black text-gray-900 dark:text-white mt-0.5">
-                  {instituteSettings.name || 'জামিয়া আরাবিয়া ইমদাদুল উলুম ফরিদাভাদ মাদ্রাসা, ঢাকা'}
+                  {instituteSettings.name || 'জামিয়া আরাবিয়া ইমদাদুল উলুম ফরিদাবাদ মাদ্রাসা, ঢাকা'}
                 </h2>
                 <p className="text-xs text-gray-500 mt-0.5">
                   দারুল ইকামাহ ও ছাত্রাবাস প্রশাসনিক মাসিক রিপোর্ট • সেপ্টেম্বর ২০২৬
@@ -3432,7 +3432,7 @@ export default function BoardingMessPage() {
               <div className="text-center space-y-1">
                 <p className="text-emerald-800 font-serif font-bold text-sm tracking-widest">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
                 <h2 className="text-2xl font-black text-gray-900 tracking-tight">
-                  {instituteSettings.name || 'জামিয়া আরাবিয়া ইমদাদুল উলুম ফরিদাভাদ'}
+                  {instituteSettings.name || 'জামিয়া আরাবিয়া ইমদাদুল উলুম ফরিদাবাদ'}
                 </h2>
                 <p className="text-xs text-gray-600">
                   দারুল ইকামাহ ও ছাত্রাবাস প্রশাসনিক বিভাগ • ঢাকা, বাংলাদেশ
