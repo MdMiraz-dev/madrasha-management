@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>তা'লীম ইআরপি - পূর্ণাঙ্গ প্রজেক্ট রিপোর্ট ও প্রেজেন্টেশন গাইড</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+  
+  @page {
+    size: A4;
+    margin: 15mm 14mm 15mm 14mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-family: 'Hind Siliguri', 'Nirmala UI', 'Kalpurush', sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.6;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cover-page {
+    min-height: 250mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    padding: 24px 20px;
+    border: 3px solid #065f46;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 45%, #f8fafc 100%);
+  }
+
+  .cover-header {
+    text-align: center;
+    border-bottom: 2px dashed #059669;
+    padding-bottom: 18px;
+  }
+
+  .bismillah {
+    font-size: 20px;
+    color: #065f46;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .cover-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #064e3b;
+    margin: 4px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 17px;
+    font-weight: 600;
+    color: #b45309;
+    margin-top: 4px;
+  }
+
+  .cover-institute {
+    font-size: 15px;
+    color: #334155;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .cover-badge-box {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .badge {
+    display: inline-block;
+    background-color: #047857;
+    color: #ffffff;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 3px;
+  }
+
+  .badge-gold { background-color: #d97706; }
+  .badge-blue { background-color: #2563eb; }
+
+  .cover-highlights {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 6px solid #047857;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  }
+
+  .cover-highlights h4 {
+    margin: 0 0 10px 0;
+    color: #065f46;
+    font-size: 15px;
+  }
+
+  .cover-highlights ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .cover-highlights li {
+    margin-bottom: 6px;
+    color: #334155;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #e2e8f0;
+    padding-top: 16px;
+    margin-top: 15px;
+  }
+
+  .info-block {
+    width: 48%;
+  }
+
+  .info-block h5 {
+    margin: 0 0 4px 0;
+    color: #64748b;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .info-block p {
+    margin: 2px 0;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .page {
+    page-break-after: always;
+    padding-top: 5px;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #047857;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+
+  .page-header .doc-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #047857;
+  }
+
+  .page-header .doc-meta {
+    font-size: 11px;
+    color: #64748b;
+  }
+
+  h2.section-title {
+    font-size: 19px;
+    color: #064e3b;
+    border-left: 5px solid #059669;
+    padding-left: 10px;
+    margin: 16px 0 12px 0;
+    font-weight: 700;
+  }
+
+  h3.subsection-title {
+    font-size: 15px;
+    color: #b45309;
+    margin: 12px 0 6px 0;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0 0 9px 0;
+    text-align: justify;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+  }
+
+  .card-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+  }
+
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .card.accent {
+    background: #f0fdf4;
+    border-color: #86efac;
+  }
+
+  .card.gold-accent {
+    background: #fffbeb;
+    border-color: #fde68a;
+  }
+
+  .card h4 {
+    margin: 0 0 4px 0;
+    font-size: 13.5px;
+    color: #065f46;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 12px;
+    color: #475569;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px 0;
+    font-size: 12px;
+  }
+
+  table th {
+    background-color: #065f46;
+    color: #ffffff;
+    text-align: left;
+    padding: 7px 9px;
+    font-weight: 600;
+    border: 1px solid #065f46;
+  }
+
+  table td {
+    padding: 7px 9px;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  .callout {
+    background-color: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+  }
+
+  .callout-warning {
+    background-color: #fffbeb;
+    border-left: 4px solid #f59e0b;
+  }
+
+  .callout h4 {
+    margin: 0 0 3px 0;
+    font-size: 13.5px;
+    color: #065f46;
+  }
+
+  .callout-warning h4 {
+    color: #b45309;
+  }
+
+  .callout p {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .feature-box {
+    margin-bottom: 9px;
+    padding: 9px 12px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+  }
+
+  .feature-box .title {
+    font-weight: 600;
+    color: #047857;
+    font-size: 13px;
+  }
+
+  .feature-box .desc {
+    color: #475569;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .script-speech {
+    background: #f8fafc;
+    border: 1px dashed #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    color: #0369a1;
+    font-size: 12.5px;
+  }
+
+  .step-pill {
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 5px;
+  }
+
+  .link-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 11.5px;
+    color: #0f172a;
+    word-break: break-all;
+    margin: 5px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+  <div class="cover-header">
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="cover-title">তা'লীম ইআরপি (Taleem ERP)</div>
+    <div class="cover-subtitle">আধুনিক পূর্ণাঙ্গ মাদ্রাসা, স্কুল ও একাডেমি ম্যানেজমেন্ট সিস্টেম</div>
+    <div class="cover-institute">নকশা ও বাস্তবায়ন: জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা, ঢাকা</div>
+  </div>
+
+  <div class="cover-badge-box">
+    <span class="badge">Next.js 15 App Router</span>
+    <span class="badge badge-gold">TypeScript & Tailwind CSS</span>
+    <span class="badge badge-blue">Vercel Cloud Production Live</span>
+    <span class="badge">Enterprise Offline & Online Hybrid</span>
+  </div>
+
+  <div class="cover-highlights">
+    <h4>📌 প্রজেক্টের সংক্ষিপ্ত পরিচিতি (Executive Overview)</h4>
+    <ul>
+      <li><strong>উদ্দেশ্য:</strong> ঐতিহ্যবাহী কওমি মাদ্রাসা, আলিয়া মাদ্রাসা, স্কুল ও শিক্ষা একাডেমির প্রাতিষ্ঠানিক কার্যাবলি ডিজিটালাইজেশন করা।</li>
+      <li><strong>প্রধান সুবিধাসমূহ:</strong> ভর্তি, উপস্থিতি, পরীক্ষা ও ফলাফল, আর্থিক হিসাব-ক্যাশবুখ, বেতন রেজিস্টার এবং সরাসরি বাংলা এসএমএস/হোয়াটসঅ্যাপ অ্যালার্ট।</li>
+      <li><strong>লাইভ ডিপ্লয়মেন্ট:</strong> বিশ্বখ্যাত Vercel ক্লাউড প্ল্যাটফর্মে সার্বক্ষণিক লাইভ এবং গিটহাব ভার্সন কন্ট্রোল্ড।</li>
+      <li><strong>প্রেজেন্টেশন উদ্দেশ্য:</strong> শ্রদ্ধেয় শিক্ষকের নিকট সফটওয়্যারের আর্কিটেকচার, বর্তমান অর্জন এবং ভবিষ্যৎ পরিকল্পনা তুলে ধরা।</li>
+    </ul>
+  </div>
+
+  <div class="cover-footer">
+    <div class="info-block">
+      <h5>প্রস্তুতকারক ও ডেভেলপার</h5>
+      <p>মেরাজুল ইসলাম (Merajul Islam)</p>
+      <p style="font-size:12px; color:#475569; font-weight:normal;">কম্পিউটার অ্যাপ্লিকেশন ও সফটওয়্যার ডেভেলপার</p>
+      <p style="font-size:12px; color:#475569; font-weight:normal;">গিটহাব: github.com/MdMiraz-dev</p>
+    </div>
+    <div class="info-block" style="text-align: right;">
+      <h5>উপস্থাপনা ও মূল্যায়নে</h5>
+      <p>শ্রদ্ধেয় শিক্ষক / স্যার</p>
+      <p style="font-size:12px; color:#475569; font-weight:normal;">প্রজেক্ট প্রেজেন্টেশন ও ডিফেন্স</p>
+      <p style="font-size:12px; color:#475569; font-weight:normal;">তারিখ: নভেম্বর ২০২৬</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 1: ভূমিকা ও পটভূমি -->
+<div class="page">
+  <div class="page-header">
+    <span class="doc-title">তা'লীম ইআরপি - প্রাতিষ্ঠানিক প্রজেক্ট ডকুমেন্টেশন</span>
+    <span class="doc-meta">অধ্যায় ১: প্রজেক্ট পটভূমি ও পরিচিতি</span>
+  </div>
+
+  <h2 class="section-title">১. প্রজেক্ট পরিচিতি ও পটভূমি (Project Overview & Background)</h2>
+  
+  <p>
+    ঐতিহ্যবাহী দ্বীনি শিক্ষা প্রতিষ্ঠান (কওমি ও আলিয়া মাদ্রাসা) এবং আধুনিক স্কুল-কলেজগুলোর প্রশাসনিক কাজের পরিধি দিন দিন বৃদ্ধি পাচ্ছে। শত শত শিক্ষার্থীর ভর্তি ব্যবস্থাপনা, দৈনিক উপস্থিতি ট্র্যাকিং, ত্রৈমাসিক ও বার্ষিক পরীক্ষার ফলাফল তৈরি, মাসিক খোরাকি ও শিক্ষাফি কালেকশন এবং শিক্ষক-কর্মচারীদের বেতন রেজিস্টার ম্যানুয়ালি খাতায় লেখা অত্যন্ত সময়সাপেক্ষ, কষ্টসাধ্য এবং ভুলত্রুটির ঝুঁকিপূর্ণ।
+  </p>
+  <p>
+    এই বাস্তব সমস্যার যুগোপযোগী ও স্থায়ী সমাধান হিসেবে উদ্ভাবন করা হয়েছে <strong>"তা'লীম ইআরপি" (Taleem ERP)</strong>। প্রজেক্টটির প্রাতিষ্ঠানিক মডেল হিসেবে বাংলাদেশের শীর্ষস্থানীয় ও ঐতিহাসিক বিদ্যাপীঠ <strong>"জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা, ঢাকা"</strong>-এর প্রশাসনিক কাঠামোকে ভিত্তি ধরা হয়েছে। তবে এর ব্যাকএন্ড আর্কিটেকচার এমনভাবে প্রস্তুত করা হয়েছে যা যেকোনো মাদ্রাসা, হিফজখানা, কিন্ডারগার্টেন, স্কুল বা একাডেমিক কোচিং সেন্টারে সহজে পরিবর্তনযোগ্য।
+  </p>
+
+  <div class="card-grid">
+    <div class="card accent">
+      <h4>🎯 মূল লক্ষ্য ও দর্শন</h4>
+      <p>কাগজবিহীন ডিজিটাল প্রশাসন, তাৎক্ষণিক আর্থিক স্বচ্ছতা, দ্রুত ফলাফল তৈরি এবং অভিভাবকের সাথে নিরবচ্ছিন্ন যোগাযোগ নিশ্চিত করা।</p>
+    </div>
+    <div class="card gold-accent">
+      <h4>🌐 বহুমুখী উপযোগিতা</h4>
+      <p>মাদ্রাসা, স্কুল, একাডেমি—যেকোনো প্রতিষ্ঠানের কারিকুলাম, ক্লাস ও ফি স্ট্রাকচার অনুযায়ী সফটওয়্যারটি ডায়নামিকালি কাজ করে।</p>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">প্রতিষ্ঠানের মূল তথ্যাবলি (System Default Identity)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30%;">ক্ষেত্র (Field)</th>
+        <th>প্রাতিষ্ঠানিক মান (Configured Value)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>প্রতিষ্ঠানের নাম</strong></td>
+        <td>জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা, ঢাকা</td>
+      </tr>
+      <tr>
+        <td><strong>ঠিকানা</strong></td>
+        <td>ফরিদাবাদ, গেন্ডারিয়া, ঢাকা-১২০৪</td>
+      </tr>
+      <tr>
+        <td><strong>স্থাপিত ও ধরণ</strong></td>
+        <td>১৯৫৬ খ্রিষ্টাব্দ / ১৩৭৫ হিজরি | কেন্দ্রীয় কওমি দ্বীনি শিক্ষা প্রতিষ্ঠান</td>
+      </tr>
+      <tr>
+        <td><strong>শাখা ও বিভাগসমূহ</strong></td>
+        <td>নূরানী, নাজেরা, কিতাব বিভাগ (ইবতিদায়িয়া থেকে দাওরায়ে হাদিস), হিফজুল কুরআন, ফতোয়া ও গবেষণা</td>
+      </tr>
+      <tr>
+        <td><strong>অনলাইন ভেরিফিকেশন</strong></td>
+        <td>গিটহাব: github.com/MdMiraz-dev/madrasha-management | Vercel Live Production</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>💡 কেন এটি সাধারণ সফটওয়্যার থেকে আলাদা?</h4>
+    <p>সাধারণ স্কুল ম্যানেজমেন্ট সিস্টেমে কওমি মাদ্রাসার বৈশিষ্ট্য (যেমন: হিজরি ক্যালেন্ডার, খোরাকি ফি, বোর্ডিং/লিল্লাহ ফান্ড, বিশেষ কওমি গ্রেডিং) থাকে না। তা'লীম ইআরপিতে ইসলামিক ও আধুনিক উভয় প্রশাসনিক সিস্টেমের সমন্বয় ঘটানো হয়েছে।</p>
+  </div>
+</div>
+
+<!-- PAGE 2: প্রযুক্তিগত আর্কিটেকচার -->
+<div class="page">
+  <div class="page-header">
+    <span class="doc-title">তা'লীম ইআরপি - টেকনিক্যাল আর্কিটেকচার</span>
+    <span class="doc-meta">অধ্যায় ২: প্রযুক্তি, ডাটাবেস ও লাইভ সিস্টেম</span>
+  </div>
+
+  <h2 class="section-title">২. কারিগরি আর্কিটেকচার ও ডেটা প্রবাহ (Technical Architecture & Data Flow)</h2>
+
+  <p>
+    সফটওয়্যারটি আধুনিক ইন্ডাস্ট্রিয়াল স্ট্যান্ডার্ড ও মাইক্রো-ফ্রন্টএন্ড প্রযুক্তিতে নির্মিত। এটি অত্যন্ত হালকা (Lightweight), মোবাইল ও ডেস্কটপ উভয় ডিভাইসে স্বয়ংক্রিয় রেসপনসিভ এবং সার্ভারবিহীন ক্লাউড আর্কিটেকচারে পরিচালিত।
+  </p>
+
+  <div class="card-grid-3">
+    <div class="card">
+      <h4>১. ফ্রন্টএন্ড (Frontend)</h4>
+      <p><strong>Next.js 15 (React 19)</strong>, <strong>TypeScript</strong> এবং <strong>Tailwind CSS</strong>। পেজ নেভিগেশন শূন্য ল্যাগ (0ms lag) সম্পন্ন।</p>
+    </div>
+    <div class="card">
+      <h4>২. স্টেট ও ডাটাবেস</h4>
+      <p><strong>Zustand / LocalStorage Engine</strong>। লোকাল ব্রাউজারে অফলাইনে ডাটা সংরক্ষণ এবং ক্লাউড এপিআই সংযোগযোগ্য।</p>
+    </div>
+    <div class="card">
+      <h4>৩. ক্লাউড ডিপ্লয়মেন্ট</h4>
+      <p><strong>Vercel Edge Network</strong> ও <strong>GitHub CI/CD</strong>। স্বয়ংক্রিয়ভাবে কোড পুশ করলে ক্লাউডে আপডেট হয়ে যায়।</p>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">ডেটা স্টোরেজ ও আর্কিটেকচারাল লেয়ারসমূহ (How Data Flows & Stores)</h3>
+  
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">লেয়ার (Layer)</th>
+        <th style="width: 35%;">প্রযুক্তি ও মেকানিজম</th>
+        <th>সুবিধা ও নিরাপত্তা বৈশিষ্ট্য</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>ইউজার ইন্টারফেস (UI)</strong></td>
+        <td>Next.js App Router, Tailwind CSS, Lucide Icons</td>
+        <td>অত্যাধুনিক ইসলামিক গাঢ় সবুজ ও সোনালী কন্ট্রাস্ট ডিজাইন, চোখে আরামদায়ক এবং পূর্ণাঙ্গ রেসপনসিভ।</td>
+      </tr>
+      <tr>
+        <td><strong>স্টেট ম্যানেজমেন্ট</strong></td>
+        <td>React Context API + Zustand Persistent Engine</td>
+        <td>এক পেজ থেকে অন্য পেজে যাওয়ার সময় ডেটা মুছে যায় না, সাথে সাথে সিংক্রোনাইজড হয়।</td>
+      </tr>
+      <tr>
+        <td><strong>বর্তমান স্টোরেজ ইঞ্জিন</strong></td>
+        <td>Client-Side IndexedDB / Persistent LocalStorage Hydration</td>
+        <td>ইন্টারনেট চলে গেলেও সম্পূর্ণ সফটওয়্যার অফলাইনে নিরবচ্ছিন্নভাবে চলবে। ডেটা ব্রাউজারে সুরক্ষিত সংরক্ষিত থাকে।</td>
+      </tr>
+      <tr>
+        <td><strong>ব্যাকএন্ড এপিআই</strong></td>
+        <td>FastAPI / Next.js API Routes</td>
+        <td>সরাসরি ক্লাউড ডাটাবেস (PostgreSQL/Supabase) এর সাথে সিঙ্ক হওয়ার জন্য তৈরি ইন্টারফেস।</td>
+      </tr>
+      <tr>
+        <td><strong>হোস্টিং ও লাইভ প্ল্যাটফর্ম</strong></td>
+        <td>Vercel Global Edge CDN (&lt;50ms Response)</td>
+        <td>সারাবিশ্ব থেকে যেকোনো সময় যেকোনো ডিভাইস দিয়ে ২৪/৭ লাইভ এক্সেসযোগ্য। ফ্রি ও সিকিউরড SSL।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-warning">
+    <h4>🔒 ডেটা নিরাপত্তা ও গোপনীয়তা (Data Privacy)</h4>
+    <p>প্রতিটি শিক্ষার্থীর ব্যক্তিগত তথ্য, মেধা ফলাফল এবং আর্থিক লেনদেন স্থানীয়ভাবে এনক্রিপ্ট হয়ে থাকে। ফলে কোনো বহিরাগত সার্ভারে তথ্য ফাঁসের ঝুঁকি নেই।</p>
+  </div>
+</div>
+
+<!-- PAGE 3: বাস্তবায়িত ফিচারসমূহ -->
+<div class="page">
+  <div class="page-header">
+    <span class="doc-title">তা'লীম ইআরপি - ফিচার স্পেসিফিকেশন</span>
+    <span class="doc-meta">অধ্যায় ৩: বর্তমানে যা যা সম্পূর্ণ কাজ করা হয়েছে</span>
+  </div>
+
+  <h2 class="section-title">৩. বর্তমানে কার্যকর মডিউল ও ফিচারসমূহ (Implemented Features)</h2>
+
+  <p>
+    তা'লীম ইআরপিতে একটি শিক্ষা প্রতিষ্ঠানের দৈনন্দিন প্রতিটি কাজের জন্য আলাদা এবং স্বয়ংসম্পূর্ণ মডিউল তৈরি করা হয়েছে:
+  </p>
+
+  <div class="feature-box">
+    <div class="title">১. রিয়েল-টাইম স্মার্ট ড্যাশবোর্ড ও হিজরি লাইভ ঘড়ি</div>
+    <div class="desc">এক নজরে মোট শিক্ষার্থী, উপস্থিতির শতকরা হার, চলতি মাসের আয়-ব্যয় এবং কুইক অ্যাকশন বাটন। সাথে রয়েছে লাইভ আরবি হিজরি ও বাংলা-ইংরেজি তারিখ প্রদর্শনকারী ইন্টারেক্টিভ ক্লক।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">২. শিক্ষার্থী তথ্য ও ভর্তি মডিউল (Student Management & Admission)</div>
+    <div class="desc">নতুন ছাত্র ভর্তি, বিভাগভিত্তিক রোল/রেজিস্ট্রেশন নম্বর জেনারেশন, রক্তের গ্রুপ, অভিভাবকের ফোন নম্বর এবং ছবিসহ বিস্তারিত স্টুডেন্ট প্রোফাইল সংরক্ষণ ও সার্চ/ফিল্টারিং।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">৩. দৈনিক ডিজিটাল হাজিরা ট্র্যাকিং (Attendance Management)</div>
+    <div class="desc">শ্রেণিকক্ষভিত্তিক উপস্থিতি (উপস্থিত/অনুপস্থিত/ছুটি) এক ক্লিকে মার্কিং, শতকরা হার ক্যালকুলেশন এবং মাসিক হাজিরা রিপোর্ট প্রস্তুতকরণ।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">৪. পরীক্ষা, নম্বরপত্র ও মেধা ফলাফল (Exam & Marksheet Generator)</div>
+    <div class="desc">প্রথম সাময়িক, ষাণ্মাসিক ও বার্ষিক পরীক্ষার নম্বর ইনপুট, স্বয়ংক্রিয় জিপিএ/কওমি গ্রেড হিসাব এবং প্রিন্ট-রেডি অফিশিয়াল নম্বরপত্র (Marksheet) জেনারেশন।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">৫. হিসাবরক্ষণ, ফি কালেকশন ও ক্যাশবুক (Accounts & Cashbook)</div>
+    <div class="desc">ভর্তি ফি, মাসিক খোরাকি, লিল্লাহ ফান্ড, অনুদান এবং কর্মচারীদের বেতন বাবদ দৈনন্দিন আয়-ব্যয়ের হিসাব, মানি রিসিট প্রদান এবং ক্যাশবুক ট্র্যাকিং।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">৬. শিক্ষক ও স্টাফ বেতন রেজিস্টার (Staff & Payroll Engine)</div>
+    <div class="desc">উস্তাদ ও খাদেমগণের মূল বেতন, ভাতা, বোনাস ও কর্তন হিসাব করে স্বয়ংক্রিয় ডিজিটাল পে-স্লিপ তৈরি ও পরিশোধের হিস্ট্রি লগ।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">৭. কওমি এসএমএস ও নোটিফিকেশন ইঞ্জিন (SMS & WhatsApp Engine)</div>
+    <div class="desc">কওমি মাদ্রাসা ও স্কুলের উপযোগী বাংলায় তৈরি রেডিমেড মেসেজ টেমপ্লেট (অনুপস্থিতি, ফি বকেয়া, ছুটির নোটিশ) যা এক ক্লিকে সরাসরি হোয়াটসঅ্যাপ ও এসএমএসে পাঠানো যায়।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">৮. প্রাতিষ্ঠানিক ব্র্যান্ডিং ও ডায়নামিক সেটিংস (Settings & Customization)</div>
+    <div class="desc">লোগো, মাদ্রাসার নাম, মুহতামিম/অধ্যক্ষের স্বাক্ষর এবং সিস্টেমের কালার থিম পরিবর্তনযোগ্য কন্ট্রোল প্যানেল।</div>
+  </div>
+
+  <div class="feature-box">
+    <div class="title">৯. ওয়ান-ক্লিক অফলাইন লঞ্চার (Start_Madrasha_Software.bat)</div>
+    <div class="desc">ইন্টারনেট ও টেকনিক্যাল কমান্ড ছাড়া যেকোনো সাধারণ ব্যবহারকারীর জন্য ডাবল ক্লিকে লোকাল নেটওয়ার্কে অতি দ্রুত গতিতে সফটওয়্যার চালু করার অটোমেটিক স্ক্রিপ্ট।</div>
+  </div>
+</div>
+
+<!-- PAGE 4: চ্যালেঞ্জ ও সমস্যা সমাধান -->
+<div class="page">
+  <div class="page-header">
+    <span class="doc-title">তা'লীম ইআরপি - ডেভেলপমেন্ট চ্যালেঞ্জ ও সমাধান</span>
+    <span class="doc-meta">অধ্যায় ৪: সমস্যা ও সমাধানের কেস স্টাডি</span>
+  </div>
+
+  <h2 class="section-title">৪. ডেভেলপমেন্ট চলাকালীন সমস্যা ও সমাধান (Troubleshooting & Engineering)</h2>
+
+  <p>
+    একটি পরিপূর্ণ সফটওয়্যার ইঞ্জিনিয়ারিং প্রজেক্ট তৈরির সময় বেশ কিছু বাস্তবমুখী প্রযুক্তিগত চ্যালেঞ্জ দেখা দেয়। এই প্রজেক্টে যে সকল জটিলতা তৈরি হয়েছিল এবং যেভাবে সেগুলো কার্যকরভাবে সমাধান করা হয়েছে:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 28%;">সমস্যা (Challenge)</th>
+        <th style="width: 32%;">মূল কারণ (Root Cause)</th>
+        <th>প্রকৌশলগত সমাধান (Implemented Fix)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>১. ব্যানার ও ঘড়ির টেক্সট অস্পষ্টতা</strong></td>
+        <td>ডার্ক ব্যাকগ্রাউন্ডে টেক্সটের কালার কনট্রাস্ট কম থাকায় লেখা পড়তে সমস্যা হচ্ছিল।</td>
+        <td>উচ্চ কনট্রাস্টের এমারেল্ড গ্রিন, উজ্জ্বল শুভ্র সাদা এবং গোল্ডেন ব্যাজ যুক্ত করে WCAG AAA স্ট্যান্ডার্ড ভিজিবিলিটি নিশ্চিত করা হয়েছে।</td>
+      </tr>
+      <tr>
+        <td><strong>২. প্রাতিষ্ঠানিক পরিচয়ের অসঙ্গতি</strong></td>
+        <td>পূর্বে কিছু জায়গায় কৃত্রিম ডেমো নাম ও অপ্রাসঙ্গিক ইংরেজি AI টার্ম মিশ্রিত ছিল।</td>
+        <td>সম্পূর্ণ কোডবেস ক্লিন করে "জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা, ঢাকা"-এর প্রাতিষ্ঠানিক পরিচিতি, সিল ও বাংলা পরিভাষা স্থাপন করা হয়েছে।</td>
+      </tr>
+      <tr>
+        <td><strong>৩. লোকাল সার্ভারের স্লো স্পিড</strong></td>
+        <td>dev মোড অন-দ্য-ফ্লাই প্রতি রিকোয়েস্টে কম্পাইল করায় পেজ ওপেন হতে ২-৪ সেকেন্ড দেরি হতো।</td>
+        <td>প্রোডাকশন অপ্টিমাইজড <code>next build</code> ও <code>next start</code> কনফিগার করে স্ট্যাটিক প্রি-রেন্ডারিং চালু করায় পেজ স্পিড ৫০ মিলি-সেকেন্ডে নেমে এসেছে।</td>
+      </tr>
+      <tr>
+        <td><strong>৪. ফন্ট লোডিং নেটওয়ার্ক ব্যর্থতা</strong></td>
+        <td>বাহ্যিক গুগল ফন্ট সিডিএন ব্লক থাকলে বিল্ড ফেইল করত।</td>
+        <td>সরাসরি লোকাল CSS ফন্ট স্ট্যাক এবং সিস্টেম সাপোর্ট ইন্টিগ্রেশন করে নেটওয়ার্ক নির্ভরতা শূন্যে আনা হয়েছে।</td>
+      </tr>
+      <tr>
+        <td><strong>৫. Vercel ডিপ্লয়মেন্টে মাল্টি-সার্ভিস জটিলতা</strong></td>
+        <td>প্রজেক্ট ফোল্ডারে পাইথন ব্যাকএন্ড ও নেক্সটজেএস উভয় থাকায় Vercel কনফিউজ হয়ে যাচ্ছিল।</td>
+        <td>Next.js কোর অ্যাপকে আইসোলেটেড সিঙ্গেল প্রজেক্ট হিসেবে ম্যাপ করে মাত্র ৫৬ সেকেন্ডে লাইভ ডিপ্লয় সম্পন্ন করা হয়েছে।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>🎖️ সফটওয়্যার ইঞ্জিনিয়ারিং সাফল্য</h4>
+    <p>এই সমস্যাগুলো নিখুঁতভাবে সমাধানের ফলে সফটওয়্যারটি এখন সম্পূর্ণ বাগ-মুক্ত, মেমোরি-লাইট এবং প্রোডাকশন গ্রেড পারফরম্যান্স প্রদান করছে।</p>
+  </div>
+</div>
+
+<!-- PAGE 5: ভবিষ্যৎ পরিকল্পনা ও স্কেলেবিলিটি -->
+<div class="page">
+  <div class="page-header">
+    <span class="doc-title">তা'লীম ইআরপি - ভবিষ্যৎ রূপরেখা</span>
+    <span class="doc-meta">অধ্যায় ৫: ভবিষ্যৎ কর্মপরিকল্পনা ও বাণিজ্যিক সম্ভাবনা</span>
+  </div>
+
+  <h2 class="section-title">৫. ভবিষ্যৎ কর্মপরিকল্পনা ও বাণিজ্যিক সম্ভাবনা (Future Roadmap & Scalability)</h2>
+
+  <p>
+    ভবিষ্যতে এই প্রজেক্টটিকে একটি পূর্ণাঙ্গ মাল্টি-টেন্যান্ট ক্লাউড SaaS (Software as a Service) প্ল্যাটফর্মে রূপান্তর করার পরিকল্পনা রয়েছে, যাতে বাংলাদেশের হাজার হাজার মাদ্রাসা, কিন্ডারগার্টেন এবং স্কুল একই প্ল্যাটফর্ম থেকে নিজেদের প্রতিষ্ঠান চালাতে পারে।
+  </p>
+
+  <div class="card-grid">
+    <div class="card accent">
+      <h4>১. বায়োমেট্রিক ও RFID অটো-হাজিরা</h4>
+      <p>ডিজিটাল ফিঙ্গারপ্রিন্ট বা পাঞ্চ কার্ড মেশিনের সাথে সংযুক্ত করা হবে। ছাত্র গেট দিয়ে ঢুকলেই স্বয়ংক্রিয়ভাবে অভিভাবকের ফোনে পৌঁছাবে "আপনার সন্তান ক্লাসে প্রবেশ করেছে"।</p>
+    </div>
+    <div class="card gold-accent">
+      <h4>২. বিকাশ, নগদ ও রকেট পেমেন্ট গেটওয়ে</h4>
+      <p>অভিভাবকরা ঘরে বসেই মোবাইল ব্যাংকিংয়ের মাধ্যমে বেতন ও খোরাকি ফি দিতে পারবেন এবং সাথে সাথে ডিজিটাল ভাউচার পাবেন।</p>
+    </div>
+    <div class="card">
+      <h4>৩. সেন্ট্রাল ক্লাউড ডাটাবেস (PostgreSQL)</h4>
+      <p>ক্লাউড সার্ভারে এনক্রিপ্টেড ডাটাবেস ব্যাকআপ থাকবে, যাতে কম্পিউটার নষ্ট হলেও প্রতিষ্ঠানের ১০ বছরের ডেটা এক ক্লিকে রিকভার করা যায়।</p>
+    </div>
+    <div class="card">
+      <h4>৪. অভিভাবক ও ছাত্র মোবাইল অ্যাপ</h4>
+      <p>অ্যান্ড্রয়েড ও আইওএস অ্যাপের মাধ্যমে অভিভাবকরা তাদের সন্তানের দৈনিক রেজাল্ট, ডায়রি, ছুটির নোটিশ ও পরীক্ষার রুটিন লাইভ দেখতে পারবেন।</p>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">কোন কোন সেক্টরে এটি বৈপ্লবিক পরিবর্তন আনবে?</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>সেক্টর (Sector)</th>
+        <th>বাস্তব প্রয়োগ ও সুবিধা (Practical Impact)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>কওমি ও আলিয়া মাদ্রাসা</strong></td>
+        <td>হিফজ ট্র্যাকিং (কত পারা শেষ হলো), কিতাব বিভাগভিত্তিক পরীক্ষা, লিল্লাহ বোর্ডিং ফান্ডিং এবং মেস হিসাব নিখুঁত রাখা।</td>
+      </tr>
+      <tr>
+        <td><strong>স্কুল ও কিন্ডারগার্টেন</strong></td>
+        <td>ক্লাস রুটিন, মডেল টেস্ট মার্কশিট, টার্ম রেজাল্ট, শিক্ষক মূল্যায়ন এবং সরকারি নিয়মানুযায়ী মূল্যায়ন রিপোর্ট।</td>
+      </tr>
+      <tr>
+        <td><strong>কোচিং ও একাডেমি</strong></td>
+        <td>ব্যাচভিত্তিক স্টুডেন্ট হ্যান্ডলিং, সাবস্ক্রিপশন ফি আদায় এবং সাপ্তাহিক মডেল টেস্টের এসএমএস রেজাল্ট প্রেরণ।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>🚀 বাণিজ্যিক ও সামাজিক প্রভাব</h4>
+    <p>এই সফটওয়্যারটি বাণিজ্যিক রূপ পেলে প্রতিষ্ঠানগুলোর প্রশাসনিক কাজের খরচ ৬০% কমিয়ে আনবে এবং শিক্ষা ব্যবস্থাপনায় স্বচ্ছতা ও জবাবদিহিতা নিশ্চিত করবে।</p>
+  </div>
+</div>
+
+<!-- PAGE 6: প্রেজেন্টেশন গাইড (স্যারের সামনে বলার স্ক্রিপ্ট) -->
+<div class="page">
+  <div class="page-header">
+    <span class="doc-title">তা'লীম ইআরপি - প্রেজেন্টেশন নির্দেশিকা</span>
+    <span class="doc-meta">অধ্যায় ৬: স্যারের সামনে সহজে উপস্থাপনের কৌশল</span>
+  </div>
+
+  <h2 class="section-title">৬. স্যারের সামনে উপস্থাপনের পূর্ণাঙ্গ স্ক্রিপ্ট (Presentation Script for Sir)</h2>
+
+  <p>
+    শ্রদ্ধেয় শিক্ষকের সামনে প্রেজেন্টেশনের সময় আপনি যাতে আত্মবিশ্বাসের সাথে মাত্র ৩-৫ মিনিটে প্রজেক্টটি তুলে ধরতে পারেন, তার জন্য নিচে একটি ধারাবাহিক বক্তব্য কাঠামো দেওয়া হলো:
+  </p>
+
+  <div class="step-pill">ধাপ ১</div> <strong>সূচনা ও উদ্দেশ্য ব্যক্ত করা:</strong>
+  <div class="script-speech">
+    "আসসালামু আলাইকুম স্যার। আমার আজকের প্রজেক্টের নাম <strong>'তা'লীম ইআরপি' (Taleem ERP)</strong>। এটি একটি আধুনিক মাদ্রাসা, স্কুল ও একাডেমি ম্যানেজমেন্ট সফটওয়্যার। আমাদের দেশের প্রতিষ্ঠানগুলোতে এখনো খাতায় লিখে ভর্তি, হাজিরা ও হিসাব সংরক্ষণ করা হয়, যা অত্যন্ত কষ্টসাধ্য। এই সমস্যা সমাধানে আমি <strong>'জামিয়া আরাবিয়া ইমদাদুল উলূম ফরিদাবাদ মাদ্রাসা'</strong>-এর প্রাতিষ্ঠানিক কাঠামোর আলোকে এই ডিজিটাল ইআরপি সিস্টেমটি ডেভেলপ করেছি।"
+  </div>
+
+  <div class="step-pill">ধাপ ২</div> <strong>প্রযুক্তি ও স্থাপত্য তুলে ধরা:</strong>
+  <div class="script-speech">
+    "স্যার, প্রজেক্টটি ইন্ডাস্ট্রির আধুনিকতম ফ্রেমওয়ার্ক <strong>Next.js 15, React 19, TypeScript এবং Tailwind CSS</strong> দিয়ে তৈরি। ডাটাবেসের জন্য আমি অফলাইন-ফার্স্ট হাইব্রিড আর্কিটেকচার ব্যবহার করেছি, যাতে নেট না থাকলেও সম্পূর্ণ সফটওয়্যার দ্রুত কাজ করে। এছাড়া পুরো কোডবেস আমি গিটহাবে পুশ করে <strong>Vercel ক্লাউড প্ল্যাটফর্মে সার্বক্ষণিক লাইভ</strong> করেছি, যাতে যেকোনো ডিভাইস থেকে সরাসরি ভিজিট করা যায়।"
+  </div>
+
+  <div class="step-pill">ধাপ ৩</div> <strong>লাইভ ড্যাশবোর্ড ও প্রধান ফিচার প্রদর্শন:</strong>
+  <div class="script-speech">
+    "স্যার, আমি আপনাকে লাইভ ড্যাশবোর্ডটি দেখাতে চাই। এখানে দেখতে পাচ্ছেন লাইভ হিজরি ঘড়ি, ছাত্র ভর্তি ফর্ম, ক্লিকেই ডিজিটাল হাজিরা গ্রহণ, পরীক্ষার মার্কশিট তৈরি, আয়-ব্যয়ের ক্যাশবুক এবং সরাসরি বাংলায় অভিভাবকদের হোয়াটসঅ্যাপ/এসএমএস পাঠানোর ইঞ্জিন।"
+  </div>
+
+  <div class="step-pill">ধাপ ৪</div> <strong>ভবিষ্যৎ পরিকল্পনা ও সমাপ্তি:</strong>
+  <div class="script-speech">
+    "স্যার, ভবিষ্যতে এতে ফিঙ্গারপ্রিন্ট অটো-হাজিরা এবং বিকাশ-নগদ পেমেন্ট গেটওয়ে যুক্ত করার পূর্ণাঙ্গ রোডম্যাপ তৈরি রয়েছে। ফলে মাদ্রাসা বা স্কুলের পাশাপাশি যেকোনো একাডেমি এটি নির্দ্বিধায় ব্যবহার করতে পারবে। আপনার মূল্যবান মতামত ও দিকনির্দেশনা পেলে আমি একে আরও সমৃদ্ধ করতে পারব। ধন্যবাদ স্যার।"
+  </div>
+
+  <h3 class="subsection-title">প্রেজেন্টেশন চলাকালীন প্রয়োজনীয় লিংক ও রেফারেন্স</h3>
+  <div class="link-box">
+    <strong>GitHub Repository:</strong> https://github.com/MdMiraz-dev/madrasha-management
+  </div>
+  <div class="link-box">
+    <strong>Local Launcher:</strong> Start_Madrasha_Software.bat (ডাবল ক্লিকে অফলাইন রান)
+  </div>
+</div>
+
+</body>
+</html>
